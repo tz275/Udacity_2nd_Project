@@ -10,6 +10,11 @@ class Block:
         self.hash = self.calc_hash()
 
     def calc_hash(self):
+        """
+        calculate the hash value for each block
+        Big(O) = 1 (if all functions we used from the hashlib O = 1)
+        :return: string
+        """
         sha = hashlib.sha256()
         hash_str = str(str(self.previous_hash) + str(self.timestamp) + str(self.data)).encode('utf-8')
         sha.update(hash_str)

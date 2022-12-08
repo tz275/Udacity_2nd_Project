@@ -6,6 +6,11 @@ class PriorityQueue:
         self.head = None
 
     def dfs(self):
+        """
+        traverse all nodes in the PriorityQueue from head
+        Big(O) = 0
+        :return: list
+        """
         ret = []
         stack = [self.head]
         while stack:
@@ -22,6 +27,12 @@ class PriorityQueue:
         return str(lst)
 
     def addOne(self, element):
+        """
+        add one element to the priority queue
+        Big(O) = 1
+        :param element: any
+        :return: None
+        """
         node1 = Node(element[0], element[1])
         if not self.head:
             self.head = node1
@@ -41,6 +52,13 @@ class PriorityQueue:
         return
 
     def addTwo(self, element1, element2):
+        """
+        add 2 elements to the priority queue
+        Big(O) = 1
+        :param element1:
+        :param element2:
+        :return:
+        """
         node1 = Node(element1[0], element1[1])
         node2 = Node(element2[0], element2[1])
         parent_node = Node(None, node1.frequency + node2.frequency)

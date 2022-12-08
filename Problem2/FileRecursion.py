@@ -2,6 +2,16 @@ import os
 
 
 def helper(suffix, path, ret):
+    """
+    a helper function which recursively traverse all the paths and files under the giving path,
+    if the file satisfy the condition, we append it into return
+    if there is another path exist, we go into this path and recursively do the same thing
+    Big(O) = n? (where n is how many paths + how many files? I don't know how to calculate this)
+    :param suffix: string
+    :param path: string
+    :param ret: list
+    :return: none
+    """
     for element in os.listdir(path):
         element = path + '/' + element
         if os.path.isfile(element):
@@ -36,6 +46,16 @@ def find_files(suffix = None, path = None):
 
 # just a try for no helper function
 def ff(suffix, path):
+    """
+        a helper function which recursively traverse all the paths and files under the giving path,
+        if the file satisfy the condition, we append it into return
+        if there is another path exist, we go into this path and recursively do the same thing
+        Big(O) = n? (where n is how many paths + how many files? I don't know how to calculate this)
+        :param suffix: string
+        :param path: string
+        :param ret: list
+        :return: none
+        """
     temp = []
     for element in os.listdir(path):
         element = path + '/' + element

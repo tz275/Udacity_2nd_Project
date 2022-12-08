@@ -3,6 +3,12 @@ import HuffmanTree
 
 
 def getPriorityList(data):
+    """
+    calculate the frequency of each element in the data
+    key = element, value = frequency and return it in the format of list of tuples after sort it
+    :param data: list
+    :return: list of tuples e.g.[(x1, x2), (y1, y2)]
+    """
     dic = {}
     for element in data:
         if element not in dic:
@@ -13,6 +19,14 @@ def getPriorityList(data):
 
 
 def encoding(data, ht):
+    """
+    loop through all the element in the data and return the huffman code of the whole data
+    Big(O) = n
+    :param data: string
+    :param ht: HuffmanTree
+    :return: string
+    """
+
     ret = ""
     for x in data:
         ret = ret + ht.search(x).code
@@ -20,6 +34,13 @@ def encoding(data, ht):
 
 
 def huffman_encoding(data = None):
+    """
+    use the helper functions "getPriorityList" change the format of the input, and use this as the input of the
+    "huffmantree.add", add all the element to the tree. Lastly, use the "encoding" method to get all the huffman code
+    Big(O) = 3n which Big(O) = n
+    :param data: string
+    :return: string, HuffmanTree
+    """
     if not data:
         print("please enter something")
         return
@@ -31,6 +52,13 @@ def huffman_encoding(data = None):
 
 
 def huffman_decoding(data, ht):
+    """
+    traverse all the code from the data and find the origin value from ht
+    Big(O) = n (n is the length of the data)
+    :param data: binary string
+    :param ht: Huffman Tree
+    :return: string
+    """
     data = [int(i) for i in data]
     curr = ht.pq.head
     ret = ""

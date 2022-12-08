@@ -2,6 +2,15 @@ from Group import Group
 
 
 def helper(user, group, visited):
+    """
+    if the user in the group or the group of the group then return true else false
+    if the group is in visited then skip this group
+    Big(O) = n^k (n is how many groups in the Group.groups, k is how many other groups in the each group)
+    :param user: string
+    :param group: Group
+    :param visited: set
+    :return: Boolean
+    """
     if user in group.get_users():
         return True
     for g in group.get_groups():

@@ -41,6 +41,11 @@ class LinkedList:
         return size
 
     def getAll(self):
+        """
+        get all value from the linked list
+        Big(O) = n
+        :return: list
+        """
         curr = self.head
         ret = []
         while curr:
@@ -61,6 +66,12 @@ Intersection:
 
 
 def union(llist_1, llist_2):
+    """
+    union two linked lists
+    :param llist_1: linked list
+    :param llist_2: linked list
+    :return: set
+    """
     # Your Solution Here
     ret = set()
     for element in llist_1.getAll():
@@ -71,7 +82,12 @@ def union(llist_1, llist_2):
 
 
 def intersection(llist_1, llist_2):
-    # Your Solution Here
+    """
+    intersection two linked lists
+    :param llist_1: linked list
+    :param llist_2: linked list
+    :return: set
+    """
     have = set()
     ret = set()
     for element in llist_1.getAll():

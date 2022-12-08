@@ -10,6 +10,12 @@ class LRU(object):
         self.capacity = capacity
 
     def get(self, key):
+        """
+        return the value according the input "key", return -1 if can't find the key in cache
+        Big(O) = 1
+        :param key: any
+        :return: any
+        """
         if key not in self.map.keys():
             return -1
         node = self.map[key]
@@ -19,14 +25,33 @@ class LRU(object):
         return node.value
 
     def remove(self):
+        """
+        a helper function, which remove the least used item from the cache
+        Big(O) = 1 (same as the popHead)
+        :return: None
+        """
         to_remove = self.ll.popHead()
         del self.map[to_remove]
 
     def put_(self, key, value):
+        """
+        a helper function, which add a value to the self.ll and self.map
+        Big(O) = 1
+        :param key: any
+        :param value: any
+        :return: None
+        """
         node = self.ll.add(value)
         self.map[key] = node
 
     def set(self, key=None, value=None):
+        """
+        put a key and a value into cache
+        Big(o) = 1
+        :param key: any
+        :param value: any
+        :return: None
+        """
         if not key:
             raise TypeError("Plz keep input not None")
         if len(self.map) < self.capacity:
