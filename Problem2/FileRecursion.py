@@ -6,7 +6,7 @@ def helper(suffix, path, ret):
     a helper function which recursively traverse all the paths and files under the giving path,
     if the file satisfy the condition, we append it into return
     if there is another path exist, we go into this path and recursively do the same thing
-    Big(O) = n? (where n is how many paths + how many files? I don't know how to calculate this)
+    Big(O) = n
     :param suffix: string
     :param path: string
     :param ret: list
@@ -50,7 +50,7 @@ def ff(suffix, path):
         a helper function which recursively traverse all the paths and files under the giving path,
         if the file satisfy the condition, we append it into return
         if there is another path exist, we go into this path and recursively do the same thing
-        Big(O) = n? (where n is how many paths + how many files? I don't know how to calculate this)
+        Big(O) = n
         :param suffix: string
         :param path: string
         :param ret: list
